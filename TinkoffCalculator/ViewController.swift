@@ -100,7 +100,7 @@ class ViewController: UIViewController {
             let result = try calculate()
             label.text = numberFormatter.string(from: NSNumber(value: result))
         }catch {
-            label.text = "Error"
+            label.text = "Ошибка"
         }
         
         calculationHistory.removeAll()
