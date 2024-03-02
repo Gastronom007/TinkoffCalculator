@@ -59,6 +59,11 @@ class ViewController: UIViewController {
     var calculationHistory: [CalculationHistoryItem] = []
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,17 +159,9 @@ class ViewController: UIViewController {
             vc.result = label.text
         }
         
-        show(calculationsListVc, sender: self)
+        navigationController?.pushViewController(calculationsListVc, animated: true)
         
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "CALCULATIONS_LIST",
-              let calculationsListVC = segue.destination as? CalculationsListViewController else { return }
-        calculationsListVC.result = label.text
-    }
-    
     
 }
 
