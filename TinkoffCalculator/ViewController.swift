@@ -147,15 +147,24 @@ class ViewController: UIViewController {
         label.text = "0"
     }
     
-    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+    @IBAction func showCalculationsList(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationsListVc = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
+        if let vc = calculationsListVc as? CalculationsListViewController {
+            vc.result = label.text
+        }
+        
+        show(calculationsListVc, sender: self)
         
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "CALCULATIONS_LIST",
               let calculationsListVC = segue.destination as? CalculationsListViewController else { return }
         calculationsListVC.result = label.text
     }
+    
     
 }
 
