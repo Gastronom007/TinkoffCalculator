@@ -67,15 +67,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        resetLabelText()
         
         guard let buttonText  = sender.titleLabel?.text else { return }
         
         if buttonText == "," && label.text?.contains(",") == true {
             return
         }
+        print(buttonText)
+        print(label.text!)
         
-        if label.text == "0" && buttonText != ","{
+        if label.text == "0" && buttonText != "," {
             label.text = buttonText
         } else {
             label.text?.append(buttonText)
@@ -123,7 +124,7 @@ class ViewController: UIViewController {
         calculationHistory.append(.number(labelNumber))
         calculationHistory.append(.operation(buttonOperation))
         
-//        resetLabelText()
+        resetLabelText()
     }
     
     func calculate() throws -> Double {
