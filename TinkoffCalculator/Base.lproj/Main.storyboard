@@ -234,6 +234,9 @@
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="clock" catalog="system"/>
+                                <connections>
+                                    <segue destination="cKj-af-BWG" kind="show" identifier="CALCULATIONS_LIST" id="qtQ-nY-W0Y"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -329,6 +332,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="IcZ-2I-aCv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="78.260869565217391" y="3.3482142857142856"/>
         </scene>
@@ -337,11 +341,45 @@
             <objects>
                 <viewController id="cKj-af-BWG" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RWc-pb-Zaf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-fC-pSI">
+                                <rect key="frame" x="207" y="443" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXW-Ww-lRe">
+                                <rect key="frame" x="162" y="495.5" width="90.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Закрыть"/>
+                                <connections>
+                                    <segue destination="IcZ-2I-aCv" kind="unwind" unwindAction="unwindActionWithUnwindSegue:" id="Hf9-9x-Trz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7E-Yf-Tr9">
+                                <rect key="frame" x="165" y="372.5" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cWx-wp-yVR"/>
                         <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="7G8-fC-pSI" firstAttribute="centerX" secondItem="RWc-pb-Zaf" secondAttribute="centerX" id="BcX-Vg-8aQ"/>
+                            <constraint firstItem="7G8-fC-pSI" firstAttribute="centerY" secondItem="RWc-pb-Zaf" secondAttribute="centerY" id="Fx2-NQ-aWv"/>
+                            <constraint firstItem="DXW-Ww-lRe" firstAttribute="top" secondItem="7G8-fC-pSI" secondAttribute="bottom" constant="52.5" id="NmB-Hf-pEr"/>
+                            <constraint firstItem="DXW-Ww-lRe" firstAttribute="centerX" secondItem="RWc-pb-Zaf" secondAttribute="centerX" id="RzE-if-AtE"/>
+                            <constraint firstItem="7G8-fC-pSI" firstAttribute="top" secondItem="B7E-Yf-Tr9" secondAttribute="bottom" constant="49.5" id="XX6-X1-IC1"/>
+                            <constraint firstItem="B7E-Yf-Tr9" firstAttribute="centerX" secondItem="RWc-pb-Zaf" secondAttribute="centerX" id="nhO-pZ-9QZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cqN-fC-YLS"/>
+                    <connections>
+                        <outlet property="calculationsLabel" destination="7G8-fC-pSI" id="WKH-UV-ENF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31d-dM-lEh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

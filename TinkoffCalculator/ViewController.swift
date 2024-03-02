@@ -73,9 +73,7 @@ class ViewController: UIViewController {
         if buttonText == "," && label.text?.contains(",") == true {
             return
         }
-        print(buttonText)
-        print(label.text!)
-        
+
         if label.text == "0" && buttonText != "," {
             label.text = buttonText
         } else {
@@ -148,5 +146,16 @@ class ViewController: UIViewController {
     func resetLabelText() {
         label.text = "0"
     }
+    
+    @IBAction func unwindAction(unwindSegue: UIStoryboardSegue) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "CALCULATIONS_LIST",
+              let calculationsListVC = segue.destination as? CalculationsListViewController else { return }
+        calculationsListVC.result = label.text
+    }
+    
 }
 
