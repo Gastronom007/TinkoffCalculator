@@ -46,6 +46,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
+    var countOfCalculations = 0
+    
     lazy var numberFormatter: NumberFormatter = {
        let numberFormatter = NumberFormatter()
         
@@ -61,7 +63,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     
@@ -108,6 +110,7 @@ class ViewController: UIViewController {
         }
         
         calculationHistory.removeAll()
+        countOfCalculations += 1
 
     }
     
@@ -147,7 +150,6 @@ class ViewController: UIViewController {
         return currentResult
     }
     
-    
     func resetLabelText() {
         label.text = "0"
     }
@@ -156,11 +158,11 @@ class ViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVc = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
         if let vc = calculationsListVc as? CalculationsListViewController {
-            vc.result = label.text
-        }
+            vc.title = "Прошлые вычисления"
+            vc.result = countOfCalculations == 0 ? "NoData" : label.text
+                    }
         
         navigationController?.pushViewController(calculationsListVc, animated: true)
-        
     }
     
 }

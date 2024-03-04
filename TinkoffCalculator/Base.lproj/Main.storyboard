@@ -337,10 +337,10 @@
             </objects>
             <point key="canvasLocation" x="858" y="3"/>
         </scene>
-        <!--История-->
+        <!--Прошлые вычисления-->
         <scene sceneID="a6y-Ev-Dfm">
             <objects>
-                <viewController storyboardIdentifier="CalculationsListViewController" id="cKj-af-BWG" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CalculationsListViewController" title="Прошлые вычисления" id="cKj-af-BWG" customClass="CalculationsListViewController" customModule="TinkoffCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RWc-pb-Zaf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,6 +370,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cWx-wp-yVR"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7G8-fC-pSI" firstAttribute="centerX" secondItem="RWc-pb-Zaf" secondAttribute="centerX" id="BcX-Vg-8aQ"/>
                             <constraint firstItem="7G8-fC-pSI" firstAttribute="centerY" secondItem="RWc-pb-Zaf" secondAttribute="centerY" id="Fx2-NQ-aWv"/>
