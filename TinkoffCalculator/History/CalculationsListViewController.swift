@@ -42,6 +42,7 @@ class CalculationsListViewController: UIViewController {
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryTableViewCell")
         
+        
     }
     
     private func expressionToString(_ expression: [CalculationHistoryItem]) -> String {
@@ -57,6 +58,15 @@ class CalculationsListViewController: UIViewController {
         }
         return result
     }
+    
+    private func getCurrentDate() -> String? {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let formatedDate = dateFormatter.string(for: date)
+        
+        return formatedDate
+    }
 }
 
 
@@ -64,8 +74,28 @@ extension CalculationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0
     }
- 
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+   
+        let header = UIView(frame: CGRect(x: 10, y: -10, width: view.frame.size.width, height: 50))
+            header.backgroundColor = .lightGray
+            let textLabel = UILabel(frame: header.frame)
+            textLabel.textAlignment = .left
+            textLabel.text = getCurrentDate()
+
+            header.addSubview(textLabel)
+
+            return header
+            
+    }
+
+    private func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
+
 }
+
 
 extension CalculationsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,6 +109,4 @@ extension CalculationsListViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
