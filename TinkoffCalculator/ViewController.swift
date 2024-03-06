@@ -59,6 +59,7 @@ class ViewController: UIViewController {
     }()
     
     var calculationHistory: [CalculationHistoryItem] = []
+    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,6 +106,8 @@ class ViewController: UIViewController {
         do {
             let result = try calculate()
             label.text = numberFormatter.string(from: NSNumber(value: result))
+            calculations.append((calculationHistory, result))
+            
         }catch {
             label.text = "Ошибка"
         }
@@ -159,8 +162,8 @@ class ViewController: UIViewController {
         let calculationsListVc = sb.instantiateViewController(withIdentifier: "CalculationsListViewController")
         if let vc = calculationsListVc as? CalculationsListViewController {
             vc.title = "Прошлые вычисления"
-            vc.result = countOfCalculations == 0 ? "NoData" : label.text
-                    }
+            vc.calculations = calculations
+        }
         
         navigationController?.pushViewController(calculationsListVc, animated: true)
     }
