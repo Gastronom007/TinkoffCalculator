@@ -45,9 +45,8 @@ enum CalculationHistoryItem {
 class ViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
-    
-    var countOfCalculations = 0
-    
+    @IBOutlet weak var historyButton: UIButton!
+
     lazy var numberFormatter: NumberFormatter = {
        let numberFormatter = NumberFormatter()
         
@@ -71,6 +70,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resetLabelText()
+        
+        historyButton.accessibilityIdentifier = "historyButton"
     }
     
     
@@ -113,7 +114,6 @@ class ViewController: UIViewController {
         }
         
         calculationHistory.removeAll()
-        countOfCalculations += 1
 
     }
     

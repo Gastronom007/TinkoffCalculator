@@ -57,12 +57,25 @@ class CalculationsListViewController: UIViewController {
         }
         return result
     }
+    
+    private func getCurrentDate() -> String? {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let formatedDate = dateFormatter.string(for: date)
+        
+        return formatedDate
+    }
 }
 
 
 extension CalculationsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90.0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        getCurrentDate()
     }
  
 }
