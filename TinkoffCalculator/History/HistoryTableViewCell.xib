@@ -17,22 +17,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNV-6y-brI">
-                        <rect key="frame" x="15" y="70" width="42" height="21"/>
+                        <rect key="frame" x="15" y="65" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-6s-ZAS">
-                        <rect key="frame" x="15" y="19" width="42" height="21"/>
+                        <rect key="frame" x="15" y="24" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aNV-6y-brI" firstAttribute="top" secondItem="hZV-rZ-Tqw" secondAttribute="centerY" constant="15" id="0zx-wl-cfi"/>
+                    <constraint firstItem="aNV-6y-brI" firstAttribute="top" secondItem="hZV-rZ-Tqw" secondAttribute="centerY" constant="10" id="0zx-wl-cfi"/>
                     <constraint firstItem="aNV-6y-brI" firstAttribute="leading" secondItem="hZV-rZ-Tqw" secondAttribute="leading" constant="15" id="QKX-fX-hBZ"/>
-                    <constraint firstItem="pnI-6s-ZAS" firstAttribute="bottom" secondItem="hZV-rZ-Tqw" secondAttribute="centerY" constant="-15" id="SvB-lZ-UzL"/>
+                    <constraint firstItem="pnI-6s-ZAS" firstAttribute="bottom" secondItem="hZV-rZ-Tqw" secondAttribute="centerY" constant="-10" id="SvB-lZ-UzL"/>
                     <constraint firstItem="pnI-6s-ZAS" firstAttribute="leading" secondItem="hZV-rZ-Tqw" secondAttribute="leading" constant="15" id="oa7-gV-JNP"/>
                 </constraints>
             </tableViewCellContentView>
