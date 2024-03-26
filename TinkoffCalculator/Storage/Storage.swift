@@ -10,7 +10,7 @@ import Foundation
 struct Calculation {
     let expression: [CalculationHistoryItem]
     let result: Double
-    let date: Date
+    var date: Date = Date()
 }
 
 extension Calculation: Codable {}
@@ -60,8 +60,12 @@ class CalculationHistoryStorage {
     
     func setHistory(calculation: [Calculation]) {
         if let encoded = try? JSONEncoder().encode(calculation) {
-            UserDefaults.standard.setValue(encoded, forKey: "calculationHistoryKey")
+            UserDefaults.standard.setValue(encoded, forKey: CalculationHistoryStorage.calculationHistoryKey)
         }
+    }
+    
+    func cleanAllData() {
+        UserDefaults.standard.removeObject(forKey: CalculationHistoryStorage.calculationHistoryKey)
     }
     
     func loadHistory() -> [Calculation] {

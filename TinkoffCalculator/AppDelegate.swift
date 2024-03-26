@@ -34,3 +34,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//protocol LongPressGestureAdder: UIGestureRecognizerDelegate {
+//    
+//    func addGestureRecognazer()
+//}
+//
+//extension AppDelegate: LongPressGestureAdder {
+//    func addGestureRecognazer() {
+//        let longPressGesture = UILongPressGestureRecognizer()
+//        longPressGesture.minimumPressDuration = 1
+//        longPressGesture.numberOfTouchesRequired = 1
+//        
+//    }
+//    
+//    
+//}
+
